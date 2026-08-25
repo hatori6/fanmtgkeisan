@@ -239,6 +239,34 @@ document.querySelectorAll('select').forEach(sel => {
   sel.addEventListener('change', calc);
 });
 </script>
+<script>
+function calc() {
+  const sw = document.getElementById('sw').value * 8900;
+  const asA = document.getElementById('asA').value * 1800;
+  const asB = document.getElementById('asB').value * 1800;
+  const tote = document.getElementById('tote').value * 3000;
+  const pouch = document.getElementById('pouch').value * 2000;
+  const sticker = document.getElementById('sticker').value * 1500;
+  const towelO = document.getElementById('towelO').value * 1500;
+  const towelG = document.getElementById('towelG').value * 1500;
+  const card = document.getElementById('card').value * 500;
+  const gacha = document.getElementById('gacha').value * 800;
+
+  const total = sw + asA + asB + tote + pouch + sticker + towelO + towelG + card + gacha;
+
+  document.getElementById('total').innerText = total.toLocaleString();
+}
+
+document.querySelectorAll('select').forEach(sel => {
+  sel.addEventListener('change', calc);
+});
+
+// ★★★ ここがクリア機能 ★★★
+document.getElementById('clearBtn').addEventListener('click', () => {
+  document.querySelectorAll('select').forEach(sel => sel.value = "0");
+  calc();
+});
+</script>
 
 </body>
 </html>
