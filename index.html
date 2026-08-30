@@ -6,11 +6,11 @@
 
 <style>
 .page-title {
-  font-size: 42px;       
-  font-weight: bold;     
-  text-align: center;    
-  margin: 20px 0;        
-  color: #ff7a00;          
+  font-size: 42px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px 0;
+  color: #ff7a00;
 }
 
 /* クリアボタン */
@@ -40,14 +40,14 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   background: #2f6fe4;
   padding: 20px;
-  max-width: 700px;   /* ← PCで横幅広く */
+  max-width: 640px;   /* ← スマホでも安全にスクロールできる幅 */
   margin: auto;
 }
 
-/* グッズ枠（幅広くした） */
+/* グッズ枠（さらに広くした） */
 .item {
   background: #fff;
-  padding: 24px;       /* ← ゆったり広く */
+  padding: 26px;       /* ← さらに広げた */
   border-radius: 14px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   margin-bottom: 22px;
@@ -56,7 +56,7 @@ body {
 
 /* ラベル文字大きく */
 label {
-  font-size: 26px;     /* ← 大きくした */
+  font-size: 26px;
   font-weight: bold;
   display: block;
   margin-bottom: 12px;
@@ -65,10 +65,10 @@ label {
 /* プルダウン大きく */
 select {
   width: 100%;
-  padding: 14px;       /* ← 押しやすく */
+  padding: 16px;
   border-radius: 10px;
   border: 2px solid #ff7a00;
-  font-size: 22px;     /* ← 文字大きく */
+  font-size: 22px;
   background: #fff;
 }
 
@@ -76,10 +76,17 @@ select {
 .items-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 24px;           /* ← アイテム間の余白広め */
+  gap: 26px;           /* ← 余白も広げた */
 }
 
-/* 合計金額バー（特大にした） */
+/* スマホで幅がギリギリにならないように調整 */
+@media (max-width: 480px) {
+  .items-wrapper {
+    gap: 18px;         /* ← スマホは少し余白を減らす */
+  }
+}
+
+/* 合計金額バー（特大） */
 .total-box {
   position: fixed;
   bottom: 0;
@@ -87,8 +94,8 @@ select {
   right: 0;
   background: #ff7a00;
   color: #fff;
-  padding: 40px;       /* ← 縦幅かなり広く */
-  font-size: 52px;     /* ← 文字特大 */
+  padding: 40px;
+  font-size: 52px;
   font-weight: bold;
   text-align: center;
   line-height: 1.4;
