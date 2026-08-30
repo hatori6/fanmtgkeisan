@@ -40,35 +40,36 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   background: #2f6fe4;
   padding: 20px;
-  max-width: 640px;   /* ← スマホでも安全にスクロールできる幅 */
+  max-width: 680px;   /* ← PCもスマホも余裕の幅 */
   margin: auto;
+  padding-bottom: 240px; /* ← 下部余白を大きく追加！ */
 }
 
 /* グッズ枠（さらに広くした） */
 .item {
   background: #fff;
-  padding: 26px;       /* ← さらに広げた */
-  border-radius: 14px;
+  padding: 32px;       /* ← かなり広くした！ */
+  border-radius: 16px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   border-left: 6px solid #ff7a00;
 }
 
 /* ラベル文字大きく */
 label {
-  font-size: 26px;
+  font-size: 28px;
   font-weight: bold;
   display: block;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 /* プルダウン大きく */
 select {
   width: 100%;
-  padding: 16px;
+  padding: 18px;
   border-radius: 10px;
   border: 2px solid #ff7a00;
-  font-size: 22px;
+  font-size: 24px;
   background: #fff;
 }
 
@@ -76,13 +77,13 @@ select {
 .items-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26px;           /* ← 余白も広げた */
+  gap: 22px;           /* ← gap を調整して幅を確保 */
 }
 
 /* スマホで幅がギリギリにならないように調整 */
 @media (max-width: 480px) {
   .items-wrapper {
-    gap: 18px;         /* ← スマホは少し余白を減らす */
+    gap: 16px;         /* ← スマホは少し gap を減らす */
   }
 }
 
@@ -94,8 +95,8 @@ select {
   right: 0;
   background: #ff7a00;
   color: #fff;
-  padding: 40px;
-  font-size: 52px;
+  padding: 42px;       /* ← 縦幅さらに広く */
+  font-size: 54px;     /* ← 文字さらに大きく */
   font-weight: bold;
   text-align: center;
   line-height: 1.4;
