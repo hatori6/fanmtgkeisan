@@ -60,7 +60,7 @@ body {
 /* グッズ枠（横幅広め） */
 .item {
   background: #fff;
-  padding: 22px;       /* ← 縦幅が広がりすぎないように調整 */
+  padding: 22px;
   border-radius: 14px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
   margin-bottom: 18px;
@@ -90,13 +90,13 @@ select {
 /* ★★★ 3列レイアウト ★★★ */
 .items-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; /* ← 3列表示 */
-  gap: 16px;   /* ← 横幅確保のため最適化 */
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
 }
 
 @media (max-width: 480px) {
   .items-wrapper {
-    grid-template-columns: 1fr 1fr; /* ← スマホは2列に自動変更 */
+    grid-template-columns: 1fr 1fr;
     gap: 12px;
   }
 }
@@ -225,21 +225,29 @@ select {
     </select>
   </div>
 
+  <!-- ★ Blu-ray（0〜10） ★ -->
   <div class="item">
     <label>トライストーン大運動会 2025 Blu-ray ￥9900<br>※購入制限なし</label>
     <select id="bd">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
       <option value="4">4</option><option value="5">5</option>
+      <option value="6">6</option><option value="7">7</option>
+      <option value="8">8</option><option value="9">9</option>
+      <option value="10">10</option>
     </select>
   </div>
 
+  <!-- ★ DVD（0〜10） ★ -->
   <div class="item">
     <label>トライストーン大運動会 2025 DVD ￥9900<br>※購入制限なし</label>
     <select id="dvd">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
       <option value="4">4</option><option value="5">5</option>
+      <option value="6">6</option><option value="7">7</option>
+      <option value="8">8</option><option value="9">9</option>
+      <option value="10">10</option>
     </select>
   </div>
 
