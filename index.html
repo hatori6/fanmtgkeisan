@@ -13,13 +13,6 @@
   color: #ff7a00;          
 }
 
-@media (max-width: 600px) {
-  .page-title {
-    font-size: 48px;   
-    margin: 24px 0;
-  }
-}
-
 .clear-box {
   text-align: right;
   margin: -10px 0 20px;
@@ -49,12 +42,6 @@ body {
   margin: auto;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 25px;
-  color: #ff7a00;
-}
-
 .item {
   background: #fff;
   padding: 15px;
@@ -80,11 +67,12 @@ select {
   background: #fff;
 }
 
-@media (min-width: 601px) {
-  body {
-    padding-bottom: 120px;
-  }
-} /* ← ここ閉じた！ */
+/* ★★★ 2列レイアウト ★★★ */
+.items-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* PCもスマホも2列固定 */
+  gap: 20px;
+}
 
 .total-box {
   position: fixed;
@@ -98,16 +86,6 @@ select {
   font-weight: bold;
   text-align: center;
 }
-
-@media (max-width: 600px) {
-  .total-box {
-    font-size: 40px !important;
-    padding: 28px;
-    line-height: 1.4;
-    min-height: 70px;
-  }
-}
-
 </style>
 </head>
 
@@ -117,68 +95,150 @@ select {
   <button id="clearBtn">選択をクリア</button>
 </div>
 
-<!-- ★★★ ここに items-wrapper を置く ★★★ -->
 <div class="items-wrapper">
-
-  <!-- ここに全部の item を入れる（今ある item を丸ごと移動） -->
 
   <div class="item">
     <label>BIG シルエットスウェット ￥8900 ※1会計5点まで</label>
-    <select id="sw">…</select>
+    <select id="sw">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
   </div>
 
   <div class="item">
     <label>アクリルスタンドA ￥1800 ※1会計5点まで</label>
-    <select id="asA">…</select>
+    <select id="asA">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
   </div>
 
   <div class="item">
     <label>アクリルスタンドB ￥1800 ※1会計5点まで</label>
-    <select id="asB">…</select>
+    <select id="asB">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
   </div>
 
   <div class="item">
     <label>メッシュトートバッグ ￥3000 ※1会計5点まで</label>
-    <select id="tote">…</select>
+    <select id="tote">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
   </div>
 
   <div class="item">
     <label>メッシュポーチ ￥2000 ※1会計5点まで</label>
-    <select id="pouch">…</select>
+    <select id="pouch">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
   </div>
 
   <div class="item">
     <label>ステッカーセット ￥1500 ※1会計5点まで</label>
-    <select id="sticker">…</select>
+    <select id="sticker">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
   </div>
 
   <div class="item">
     <label>ハンドタオル（オレンジ） ￥1500 ※1会計5点まで</label>
-    <select id="towelO">…</select>
+    <select id="towelO">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
   </div>
 
   <div class="item">
     <label>ハンドタオル（グリーン） ￥1500 ※1会計5点まで</label>
-    <select id="towelG">…</select>
+    <select id="towelG">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
   </div>
 
   <div class="item">
-    <label>クリアカード ￥500 ※1会計24点まで</label>
-    <select id="card">…</select>
+    <label>クリアカード（ランダム全12種） ￥500 ※1会計24点まで</label>
+    <select id="card">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+      <option value="6">6</option><option value="7">7</option>
+      <option value="8">8</option><option value="9">9</option>
+      <option value="10">10</option><option value="11">11</option>
+      <option value="12">12</option><option value="13">13</option>
+      <option value="14">14</option><option value="15">15</option>
+      <option value="16">16</option><option value="17">17</option>
+      <option value="18">18</option><option value="19">19</option>
+      <option value="20">20</option><option value="21">21</option>
+      <option value="22">22</option><option value="23">23</option>
+      <option value="24">24</option>
+    </select>
   </div>
 
   <div class="item">
-    <label>ガチャ ￥800 ※1会計22点まで</label>
-    <select id="gacha">…</select>
+    <label>ガチャ（ランダム全11種） ￥800 ※1会計22点まで</label>
+    <select id="gacha">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+      <option value="6">6</option><option value="7">7</option>
+      <option value="8">8</option><option value="9">9</option>
+      <option value="10">10</option><option value="11">11</option>
+      <option value="12">12</option><option value="13">13</option>
+      <option value="14">14</option><option value="15">15</option>
+      <option value="16">16</option><option value="17">17</option>
+      <option value="18">18</option><option value="19">19</option>
+      <option value="20">20</option><option value="21">21</option>
+      <option value="22">22</option>
+    </select>
   </div>
 
 </div>
-<!-- ★★★ items-wrapper はここまで ★★★ -->
-
 
 <div class="total-box">
   合計金額：<span id="total">0</span> 円
 </div>
+
+<script>
+function calc() {
+  const sw = document.getElementById('sw').value * 8900;
+  const asA = document.getElementById('asA').value * 1800;
+  const asB = document.getElementById('asB').value * 1800;
+  const tote = document.getElementById('tote').value * 3000;
+  const pouch = document.getElementById('pouch').value * 2000;
+  const sticker = document.getElementById('sticker').value * 1500;
+  const towelO = document.getElementById('towelO').value * 1500;
+  const towelG = document.getElementById('towelG').value * 1500;
+  const card = document.getElementById('card').value * 500;
+  const gacha = document.getElementById('gacha').value * 800;
+
+  const total = sw + asA + asB + tote + pouch + sticker + towelO + towelG + card + gacha;
+
+  document.getElementById('total').innerText = total.toLocaleString();
+}
+
+document.querySelectorAll('select').forEach(sel => {
+  sel.addEventListener('change', calc);
+});
+
+document.getElementById('clearBtn').addEventListener('click', () => {
+  document.querySelectorAll('select').forEach(sel => sel.value = "0");
+  calc();
+});
+</script>
 
 </body>
 </html>
