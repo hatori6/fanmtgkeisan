@@ -52,7 +52,7 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   background: #2f6fe4;
   padding: 20px;
-  max-width: 720px;   /* ← 横幅をさらに広げた */
+  max-width: 760px;   /* ← 横幅さらに広げた！ */
   margin: auto;
   padding-bottom: 200px;
 }
@@ -60,12 +60,12 @@ body {
 /* グッズ枠（横幅広めに最適化） */
 .item {
   background: #fff;
-  padding: 28px;       /* ← 縦が広がりすぎないように調整 */
+  padding: 26px;       /* ← 縦が広がりすぎないように調整 */
   border-radius: 16px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  margin-bottom: 24px;
+  margin-bottom: 20px;
   border-left: 6px solid #ff7a00;
-  word-break: break-word; /* ← 長い文でも折り返す */
+  word-break: break-word;
 }
 
 /* ラベル文字 */
@@ -73,7 +73,7 @@ label {
   font-size: 26px;
   font-weight: bold;
   display: block;
-  line-height: 1.4;
+  line-height: 1.5;
   margin-bottom: 12px;
 }
 
@@ -91,12 +91,12 @@ select {
 .items-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 18px;   /* ← 横幅確保のため少し狭めに */
+  gap: 14px;   /* ← 横幅確保のためさらに狭めた */
 }
 
 @media (max-width: 480px) {
   .items-wrapper {
-    gap: 12px;
+    gap: 10px;
   }
 }
 </style>
@@ -112,7 +112,7 @@ select {
 <div class="items-wrapper">
 
   <div class="item">
-    <label>BIG シルエットスウェット ￥8900<br>※1会計5点まで</label>
+    <label>BIG シルエットスウェット ￥8900<br>※1会計につき 5点までの条件</label>
     <select id="sw">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -121,7 +121,7 @@ select {
   </div>
 
   <div class="item">
-    <label>アクリルスタンドA ￥1800<br>※1会計5点まで</label>
+    <label>アクリルスタンドA ￥1800<br>※1会計につき 5点までの条件</label>
     <select id="asA">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -130,7 +130,7 @@ select {
   </div>
 
   <div class="item">
-    <label>アクリルスタンドB ￥1800<br>※1会計5点まで</label>
+    <label>アクリルスタンドB ￥1800<br>※1会計につき 5点までの条件</label>
     <select id="asB">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -139,7 +139,7 @@ select {
   </div>
 
   <div class="item">
-    <label>メッシュトートバッグ ￥3000<br>※1会計5点まで</label>
+    <label>メッシュトートバッグ ￥3000<br>※1会計につき 5点までの条件</label>
     <select id="tote">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -148,7 +148,7 @@ select {
   </div>
 
   <div class="item">
-    <label>メッシュポーチ ￥2000<br>※1会計5点まで</label>
+    <label>メッシュポーチ ￥2000<br>※1会計につき 5点までの条件</label>
     <select id="pouch">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -157,7 +157,7 @@ select {
   </div>
 
   <div class="item">
-    <label>ステッカーセット ￥1500<br>※1会計5点まで</label>
+    <label>ステッカーセット ￥1500<br>※1会計につき 5点までの条件</label>
     <select id="sticker">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -166,7 +166,7 @@ select {
   </div>
 
   <div class="item">
-    <label>ハンドタオル（オレンジ） ￥1500<br>※1会計5点まで</label>
+    <label>ハンドタオル（オレンジ） ￥1500<br>※1会計につき 5点までの条件</label>
     <select id="towelO">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -175,7 +175,7 @@ select {
   </div>
 
   <div class="item">
-    <label>ハンドタオル（グリーン） ￥1500<br>※1会計5点まで</label>
+    <label>ハンドタオル（グリーン） ￥1500<br>※1会計につき 5点までの条件</label>
     <select id="towelG">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -184,7 +184,7 @@ select {
   </div>
 
   <div class="item">
-    <label>クリアカード（ランダム全12種） ￥500<br>※1会計24点まで</label>
+    <label>クリアカード（ランダム全12種） ￥500<br>※1会計につき 24点までの条件</label>
     <select id="card">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -203,7 +203,7 @@ select {
   </div>
 
   <div class="item">
-    <label>ガチャ（ランダム全11種） ￥800<br>※1会計22点まで</label>
+    <label>ガチャ（ランダム全11種） ￥800<br>※1会計につき 22点までの条件</label>
     <select id="gacha">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
