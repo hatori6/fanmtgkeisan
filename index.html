@@ -52,51 +52,52 @@ body {
   font-family: "Helvetica", "Arial", sans-serif;
   background: #2f6fe4;
   padding: 20px;
-  max-width: 760px;   /* ← 横幅さらに広げた！ */
+  max-width: 900px;   /* ← 3列でも余裕の横幅 */
   margin: auto;
   padding-bottom: 200px;
 }
 
-/* グッズ枠（横幅広めに最適化） */
+/* グッズ枠（横幅広め） */
 .item {
   background: #fff;
-  padding: 26px;       /* ← 縦が広がりすぎないように調整 */
-  border-radius: 16px;
+  padding: 22px;       /* ← 縦幅が広がりすぎないように調整 */
+  border-radius: 14px;
   box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   border-left: 6px solid #ff7a00;
   word-break: break-word;
 }
 
 /* ラベル文字 */
 label {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: bold;
   display: block;
   line-height: 1.5;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* プルダウン */
 select {
   width: 100%;
-  padding: 16px;
+  padding: 14px;
   border-radius: 10px;
   border: 2px solid #ff7a00;
-  font-size: 22px;
+  font-size: 20px;
   background: #fff;
 }
 
-/* 2列レイアウト（横幅広げるため gap を調整） */
+/* ★★★ 3列レイアウト ★★★ */
 .items-wrapper {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;   /* ← 横幅確保のためさらに狭めた */
+  grid-template-columns: 1fr 1fr 1fr; /* ← 3列表示 */
+  gap: 16px;   /* ← 横幅確保のため最適化 */
 }
 
 @media (max-width: 480px) {
   .items-wrapper {
-    gap: 10px;
+    grid-template-columns: 1fr 1fr; /* ← スマホは2列に自動変更 */
+    gap: 12px;
   }
 }
 </style>
@@ -111,6 +112,7 @@ select {
 
 <div class="items-wrapper">
 
+  <!-- 1段目 -->
   <div class="item">
     <label>BIG シルエットスウェット ￥8900<br>※1会計につき 5点までの条件</label>
     <select id="sw">
@@ -138,6 +140,7 @@ select {
     </select>
   </div>
 
+  <!-- 2段目 -->
   <div class="item">
     <label>メッシュトートバッグ ￥3000<br>※1会計につき 5点までの条件</label>
     <select id="tote">
@@ -165,6 +168,7 @@ select {
     </select>
   </div>
 
+  <!-- 3段目 -->
   <div class="item">
     <label>ハンドタオル（オレンジ） ￥1500<br>※1会計につき 5点までの条件</label>
     <select id="towelO">
@@ -184,7 +188,7 @@ select {
   </div>
 
   <div class="item">
-    <label>クリアカード（ランダム全12種） ￥500<br>※1会計につき 24点までの条件</label>
+    <label>クリアカード ￥500<br>※1会計につき 24点までの条件</label>
     <select id="card">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -202,8 +206,9 @@ select {
     </select>
   </div>
 
+  <!-- 4段目 -->
   <div class="item">
-    <label>ガチャ（ランダム全11種） ￥800<br>※1会計につき 22点までの条件</label>
+    <label>ガチャ ￥800<br>※1会計につき 22点までの条件</label>
     <select id="gacha">
       <option value="0">0</option><option value="1">1</option>
       <option value="2">2</option><option value="3">3</option>
@@ -217,6 +222,24 @@ select {
       <option value="18">18</option><option value="19">19</option>
       <option value="20">20</option><option value="21">21</option>
       <option value="22">22</option>
+    </select>
+  </div>
+
+  <div class="item">
+    <label>トライストーン大運動会 2025 Blu-ray ￥9900<br>※購入制限なし</label>
+    <select id="bd">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
+    </select>
+  </div>
+
+  <div class="item">
+    <label>トライストーン大運動会 2025 DVD ￥9900<br>※購入制限なし</label>
+    <select id="dvd">
+      <option value="0">0</option><option value="1">1</option>
+      <option value="2">2</option><option value="3">3</option>
+      <option value="4">4</option><option value="5">5</option>
     </select>
   </div>
 
@@ -234,8 +257,10 @@ function calc() {
   const towelG = document.getElementById('towelG').value * 1500;
   const card = document.getElementById('card').value * 500;
   const gacha = document.getElementById('gacha').value * 800;
+  const bd = document.getElementById('bd').value * 9900;
+  const dvd = document.getElementById('dvd').value * 9900;
 
-  const total = sw + asA + asB + tote + pouch + sticker + towelO + towelG + card + gacha;
+  const total = sw + asA + asB + tote + pouch + sticker + towelO + towelG + card + gacha + bd + dvd;
 
   document.getElementById('topTotal').innerText = "合計：" + total.toLocaleString() + " 円";
 }
